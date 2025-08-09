@@ -1,0 +1,41 @@
+Headers are extra metadata sent with HTTP requests or responses.
+
+Request headers → info from the client to the server.
+
+Response headers → info from the server to the client.
+
+Example request headers your browser might send:
+
+User-Agent is an HTTP request header that tells the server information about the client making the request — usually the browser, app, or tool, and sometimes the operating system or device
+
+from typing import List
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+
+class Base(DeclarativeBase):
+    pass
+
+
+# One side of the relationship
+class Parent(Base):
+    __tablename__ = "parent"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    # other columns...
+
+    # One-to-many: a parent has multiple children
+    children: Mapped[List["Child"]] = relationship(
+        back_populates="parent",
+        cascade="all, delete-orphan"
+    )
+
+
+# Many side of the relationship
+class Child(Base):
+    __tablename__ = "child"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    parent_id: Mapped[int] = mapped_column(ForeignKey("parent.id"))
+
+    # Many-to-one: each child belongs to one parent
+    parent: Mapped["Parent"] = relationship(back_populates="children")
