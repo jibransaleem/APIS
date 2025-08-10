@@ -1,0 +1,11 @@
+In FastAPI, “CORS” stands for Cross-Origin Resource Sharing.
+It’s a security feature that tells browsers whether they can make requests from one domain to another.
+
+For example:
+
+Your API runs on http://localhost:8000
+
+Your frontend runs on http://localhost:3000
+Without CORS setup, browsers will block these requests.
+
+# to  communicat between two server/host
