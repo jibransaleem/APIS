@@ -1,0 +1,15 @@
+# from fastapi import FastAPI, Request
+
+# app = FastAPI()
+
+# @app.middleware("http")
+# async def middleware_name(request: Request, call_next):
+#     # Code to run **before** the request reaches the endpoint
+#     # (e.g., logging, authentication, modifying request)
+
+#     response = await call_next(request)  # Pass request to the next middleware/route
+
+#     # Code to run **after** the endpoint generates a response
+#     # (e.g., modify response headers, logging)
+
+#     return response
