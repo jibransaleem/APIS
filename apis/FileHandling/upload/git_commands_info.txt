@@ -1,0 +1,110 @@
+Remote repo means your repos on your github account 
+local means your data on your machine i.e laptop , pc
+
+clone :-cloning a remote repo on your local machine
+
+
+pushing code to main branch
+
+git push origin main
+
+git clone <repo link>
+
+
+IF WE HAVE REPO OR WE NEED TO ADD CODE TO A REPO PRESENT ON GITHUB 
+WE ARE USING CLONE AND ADDING CODE AND PUSHING CODE TO BRANCH
+
+IF WE WANT TO INTIALIZE A REPO FROM OUR LOCAL MACHINE AND STARTS CODE FROM THERE
+
+WE WILL FIRST CONNECT TO GITHUB REPO
+
+git remote add <connection name gernally origin> <link of repo>
+
+# this remote is just a pointer to your github repo 
+or connection between your local and remote repo
+
+To verify remote or see connections
+
+git remote -v
+
+# Pushing code 
+
+git push <remote name > <branch name >
+
+git push -u origin main : telling git we are working on this project for a long time and all the pushes i will do
+make it on main branch so next time you can only use git push . here -u is called set upstream
+Summary
+Cloning: Used when the repository already exists on GitHub.
+
+
+
+Initializing: Used when starting a new project locally and connecting it to GitHub later.
+
+Remote: A connection to a GitHub repository.
+
+Branch: The version of the code you’re working on.
+
+Git Basic Info and Commands:
+
+1. git status
+   - Shows the current status of the working directory and staging area, including which files are staged, modified, or untracked.
+
+2. git config --global user.name "Your Name" 
+   - Sets the global Git username for your commits.
+
+3. git config --global user.email "youremail@example.com" 
+   - Sets the global Git email for your commits.
+
+4. git config --list
+   - Displays the list of all Git configuration settings.
+
+5. git init
+   - Initializes a new Git repository in the current directory.
+
+6. git add <filename> or git add .
+   - Stages a file or all files for the next commit.
+
+7. git rm --cached <filename>
+   - Removes a file from Git's staging area without deleting it from the working directory.
+
+8. git commit -m "Your commit message"
+   - Records changes to the repository with a commit message.
+
+9. git log
+   - Displays the commit history in reverse chronological order.
+
+10. git log --oneline
+    - Shows a simplified, one-line output of each commit, including the commit hash and message.
+
+11. git commit --amend
+    - Allows you to modify the last commit, either by changing its message or including additional changes.
+
+12. git reset <file>
+    - Unstages a file that was previously added to the staging area.
+
+13. git log --oneline --graph
+    - Displays the commit history in a compact, one-line format with a visual graph of branches and merges.
+
+14. git config --global core.editor "editor-name"
+    - Sets the default editor for Git, such as vim, nano, or Visual Studio Code.
+
+15. git config --global core.editor "code --wait"
+    - Configures Visual Studio Code as the default editor, ensuring Git waits for the editor to close.
+
+git branch -M <new_name> to rename current branch
+.\env\Scripts\activate.ps1
+
+
+git branch -d branch name : to delte a branch , make sure ur in any of other branch except which u r deleting else error
+
+crate a new branch update code and push that code:
+git branch prod
+write code in prod branch ..
+git add . 
+git commit - m
+git push orign prod
+
+
+Diff between or compare two branches
+
+git diff <branch name> , compare us hogi gs branch s apne command ki , code in green color is diff
